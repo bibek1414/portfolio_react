@@ -1,0 +1,19 @@
+@import "tailwindcss";
+/* Make sure to set these base styles for dark mode */
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+}
+
+.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 31, 41, 55;
+}
+
+/* Prevent flashing on theme toggle */
+.transition-colors {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
