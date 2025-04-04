@@ -112,7 +112,7 @@ const ProfileOrbit = () => {
       <div className="orbit-item"><FaGlobe /></div>
       
       <div className="profile-circle">
-        <img src="src/assets/images/profile.jpg" alt="Bibek Bhattarai" className="w-full h-full object-cover" />
+        <img src="/images/profile.jpg" alt="Bibek Bhattarai" className="w-full h-full object-cover" />
       </div>
     </div>
   );

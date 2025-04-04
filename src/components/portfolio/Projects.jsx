@@ -12,7 +12,7 @@ const Projects = () => {
       technologies: "HTML, CSS, Tailwind, JavaScript, Nextjs, MongoDB, AWS, Google Console, Stripe",
       liveLink: "https://ecommerce-front-nine-mu.vercel.app/",
       githubLink: "https://github.com/bibek1414/ecommerce-frontend-backend",
-      image: "/src/assets/images/hamro-pasal1.png" // Update with actual path
+      image: "/images/hamro-pasal1.png" // Update with actual path
     },
     {
       title: "Todo Project",
@@ -20,7 +20,7 @@ const Projects = () => {
       technologies: "Django, HTML, CSS, JavaScript",
       liveLink: "https://todo-90zm.onrender.com",
       githubLink: "https://github.com/bibek1414/todo-django",
-      image: "/src/assets/images/todo1.png" // Update with actual path
+      image: "/images/todo1.png" // Update with actual path
     },
     {
       title: "Tweeter Bar",
@@ -28,7 +28,7 @@ const Projects = () => {
       technologies: "Django, Tailwind CSS, JavaScript",
       liveLink: "https://tweet-django-xxrw.onrender.com",
       githubLink: "https://github.com/bibek1414/tweet-django",
-      image: "/src/assets/images/tweeter-bar.png" // Update with actual path
+      image: "/images/tweeter-bar.png" // Update with actual path
     },
     {
       title: "Quiz Application",
@@ -36,7 +36,7 @@ const Projects = () => {
       technologies: "Django, Tailwind CSS, JavaScript",
       liveLink: "https://quiz-django.onrender.com/",
       githubLink: "https://github.com/bibek1414/quiz_django",
-      image: "/src/assets/images/image.png" // Update with actual path
+      image: "/images/image.png" // Update with actual path
     },
     {
       title: "Task Manager",
@@ -44,7 +44,7 @@ const Projects = () => {
       technologies: "React, FastAPI, MongoDB, Tailwind CSS",
       liveLink: "https://taskmanagerfront-sandy.vercel.app/",
       githubLink: "https://github.com/bibek1414/taskmanagerfront",
-      image: "/src/assets/images/task-manager.png" // Update with actual path
+      image: "/images/task-manager.png" // Update with actual path
     },
     {
       title: "Expense Tracker",
@@ -52,7 +52,7 @@ const Projects = () => {
       technologies: "Django, PostgreSQL, Google Auth",
       liveLink: "https://expense-tracker-example.herokuapp.com/",
       githubLink: "https://github.com/bibek1414/expense_tracker",
-      image: "/src/assets/images/expense-tracker.png" // Update with actual path
+      image: "/images/expense-tracker.png" // Update with actual path
     },
     {
       title: "Weather App",
@@ -60,7 +60,7 @@ const Projects = () => {
       technologies: "Django, OpenWeatherMap API, Tailwind CSS, JavaScript, Gsap",
       liveLink: "https://weatherapp-example.vercel.app/",
       githubLink: "https://github.com/bibek1414/weatherapp",
-      image: "/src/assets/images/weather-app.png" // Update with actual path
+      image: "/images/weather-app.png" // Update with actual path
     },
     {
       title: "ChatApp",
@@ -68,7 +68,7 @@ const Projects = () => {
       technologies: "Django, Channels, WebRTC, Redis, Tailwind CSS, JavaScript",
       liveLink: "https://chatapp-cuvv.onrender.com/",
       githubLink: "https://github.com/bibek1414/chatapp",
-      image: "/src/assets/images/chat-app.png" // Update with actual path
+      image: "/images/chat-app.png" // Update with actual path
     }
   ];
 
