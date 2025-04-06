@@ -29,7 +29,7 @@ const Contact = () => {
     
     try {
       // Replace with your actual backend URL
-      const response = await fetch('https://www.bibekbhattarai14.com.np/api/send-email', {
+      const response = await fetch('portfolio-react-en94o9ib3-bibek-bhattarais-projects.vercel.app/api/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
