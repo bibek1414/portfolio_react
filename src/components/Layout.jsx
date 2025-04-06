@@ -9,31 +9,37 @@ const Layout = ({ children }) => {
   // Check for saved theme in localStorage on mount
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
       setDarkMode(true);
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
     }
   }, []);
 
   // Toggle dark mode
   const toggleDarkMode = () => {
-    const newDarkMode = !darkMode;
-    setDarkMode(newDarkMode);
-    localStorage.setItem('theme', newDarkMode ? 'dark' : 'light');
+    setDarkMode(prevMode => {
+      const newMode = !prevMode;
+      
+      if (newMode) {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      }
+      
+      return newMode;
+    });
   };
 
   // Toggle mobile menu
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
-
-  // Set body class when dark mode changes
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [darkMode]);
 
   // Navigation links
   const navLinks = [
@@ -44,8 +50,8 @@ const Layout = ({ children }) => {
   ];
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'dark bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-800'}`}>
-      <header className={`fixed w-full z-10 transition-colors duration-300 ${darkMode ? 'bg-gray-800 border-b border-gray-700' : 'bg-white border-b border-gray-200'} shadow-md`}>
+    <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-800'}`}>
+      <header className={`fixed w-full z-10 transition-colors duration-300 ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} border-b shadow-md`}>
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex justify-between items-center py-4">
             {/* Logo and Name */}
@@ -67,29 +73,35 @@ const Layout = ({ children }) => {
                   key={link.path}
                   to={link.path}
                   className={`transition-colors duration-300 ${
-                    location.pathname === link.path 
-                    ? darkMode 
-                      ? 'text-blue-400 font-medium' 
-                      : 'text-blue-600 font-medium' 
-                    : darkMode 
-                      ? 'text-gray-300 hover:text-blue-400' 
-                      : 'text-gray-700 hover:text-blue-600'
+                    location.pathname === link.path
+                      ? darkMode
+                        ? 'text-blue-400 font-medium'
+                        : 'text-blue-600 font-medium'
+                      : darkMode
+                        ? 'text-gray-300 hover:text-blue-400'
+                        : 'text-gray-700 hover:text-blue-600'
                   }`}
                 >
                   {link.label}
                 </Link>
               ))}
-              
-              {/* Dark Mode Toggle */}
+
+              {/* Dark Mode Toggle with Text */}
               <button
                 onClick={toggleDarkMode}
-                className={`p-2 rounded-full transition-colors duration-300 ${darkMode ? 'bg-gray-700 text-yellow-300 hover:bg-gray-600' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
+                className={`flex items-center p-2 rounded-full transition-colors duration-300 ${darkMode ? 'bg-gray-700 text-yellow-300 hover:bg-gray-600' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
                 aria-label="Toggle dark mode"
               >
                 {darkMode ? (
-                  <i className="fas fa-sun"></i>
+                  <>
+                    <i className="fas fa-sun mr-2"></i>
+                    <span className="text-sm">Light Mode</span>
+                  </>
                 ) : (
-                  <i className="fas fa-moon"></i>
+                  <>
+                    <i className="fas fa-moon mr-2"></i>
+                    <span className="text-sm">Dark Mode</span>
+                  </>
                 )}
               </button>
             </div>
@@ -98,18 +110,24 @@ const Layout = ({ children }) => {
             <div className="md:hidden flex items-center">
               <button
                 onClick={toggleDarkMode}
-                className={`p-2 rounded-full mr-3 transition-colors duration-300 ${darkMode ? 'bg-gray-700 text-yellow-300 hover:bg-gray-600' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
+                className={`flex items-center p-2 rounded-full mr-3 transition-colors duration-300 ${darkMode ? 'bg-gray-700 text-yellow-300 hover:bg-gray-600' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
                 aria-label="Toggle dark mode"
               >
                 {darkMode ? (
-                  <i className="fas fa-sun"></i>
+                  <>
+                    <i className="fas fa-sun mr-2"></i>
+                    <span className="text-sm">Light</span>
+                  </>
                 ) : (
-                  <i className="fas fa-moon"></i>
+                  <>
+                    <i className="fas fa-moon mr-2"></i>
+                    <span className="text-sm">Dark</span>
+                  </>
                 )}
               </button>
-              
-              <button 
-                onClick={toggleMobileMenu} 
+
+              <button
+                onClick={toggleMobileMenu}
                 className={`p-2 rounded-md transition-colors duration-300 ${darkMode ? 'bg-gray-700 text-gray-300 hover:bg-gray-600' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
                 aria-label="Toggle mobile menu"
               >
@@ -128,13 +146,13 @@ const Layout = ({ children }) => {
                   <Link
                     to={link.path}
                     className={`block transition-colors duration-300 ${
-                      location.pathname === link.path 
-                      ? darkMode 
-                        ? 'text-blue-400 font-medium' 
-                        : 'text-blue-600 font-medium' 
-                      : darkMode 
-                        ? 'text-gray-300 hover:text-blue-400' 
-                        : 'text-gray-700 hover:text-blue-600'
+                      location.pathname === link.path
+                        ? darkMode
+                          ? 'text-blue-400 font-medium'
+                          : 'text-blue-600 font-medium'
+                        : darkMode
+                          ? 'text-gray-300 hover:text-blue-400'
+                          : 'text-gray-700 hover:text-blue-600'
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -156,7 +174,7 @@ const Layout = ({ children }) => {
               © {new Date().getFullYear()} Bibek Bhattarai. All rights reserved.
             </p>
           </div>
-          
+
           <div className="flex space-x-6">
             <a
               href="https://github.com/bibek1414"

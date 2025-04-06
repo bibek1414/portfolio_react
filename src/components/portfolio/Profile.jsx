@@ -1,19 +1,19 @@
-// src/components/portfolio/Profile.jsx
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 const Profile = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const activeSection = searchParams.get('section') || 'education';
-
-  const setActiveSection = (section) => {
+    const setActiveSection = (section) => {
     setSearchParams({ section });
   };
 
   return (
-    <div className="flex min-h-screen bg-white dark:bg-gray-900">
-      {/* Simple Sidebar Navigation */}
-      <div className="w-64 bg-white dark:bg-gray-900 p-6 space-y-4">
+    <div className="flex min-h-screen bg-gray-100 dark:bg-gray-900">
+      {/* Sidebar with contrasting background */}
+      <div className="w-64 bg-gray-50 dark:bg-gray-800 shadow-md border-r border-gray-200 dark:border-gray-700 p-6 space-y-4">
+        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">My Profile</h3>
+        
         <button 
           onClick={() => setActiveSection('education')}
           className={`block px-4 py-2 rounded-lg transition-all w-full text-left ${
@@ -48,26 +48,26 @@ const Profile = () => {
         </button>
       </div>
 
-      {/* Main Content Area */}
-      <div className="flex-1 p-8">
+      {/* Main Content Area with proper contrast */}
+      <div className="flex-1 p-8 bg-white dark:bg-gray-900">
         {activeSection === 'education' && (
           <div className="space-y-6" data-aos="fade-up">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">My Education</h2>
-            <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow-lg transition-colors duration-300">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Bachelor's in Computer Science and Information Technology (BSc CSIT)</h3>
               <p className="text-gray-600 dark:text-gray-400">Hetauda City College</p>
-              <p className="text-gray-500 dark:text-gray-500">2019-2024</p>
+              <p className="text-gray-500 dark:text-gray-400">2019-2024</p>
             </div>
-            <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow-lg transition-colors duration-300">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">+2 in Science</h3>
               <p className="text-gray-600 dark:text-gray-400">Makwanpur Multiple Campus</p>
-              <p className="text-gray-500 dark:text-gray-500">2017-2019</p>
+              <p className="text-gray-500 dark:text-gray-400">2017-2019</p>
             </div>
           </div>
         )}
 
         {activeSection === 'skills' && (
-          <>
+          <div>
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">My Skills</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6" data-aos="fade-up">
               {[
@@ -84,7 +84,7 @@ const Profile = () => {
                 { icon: 'fab fa-git-alt', color: 'text-red-500', name: 'Git' },
                 { icon: 'fab fa-github', color: 'text-gray-700 dark:text-gray-300', name: 'GitHub' }
               ].map((skill, index) => (
-                <div key={index} className="group relative bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg flex items-center justify-center">
+                <div key={index} className="group relative bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-lg flex items-center justify-center transition-colors duration-300">
                   <i className={`${skill.icon} ${skill.color} text-4xl group-hover:opacity-20 transition-opacity`}></i>
                   <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity text-gray-900 dark:text-white">
                     {skill.name}
@@ -92,33 +92,33 @@ const Profile = () => {
                 </div>
               ))}
             </div>
-          </>
+          </div>
         )}
 
         {activeSection === 'about' && (
           <div className="space-y-6" data-aos="fade-up">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">About Me</h2>
-            <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg space-y-4">
-              <div className="grid grid-cols-2 gap-4">
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow-lg space-y-4 transition-colors duration-300">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <p className="text-gray-600 dark:text-gray-400">Name:</p>
-                  <p className="text-gray-900 dark:text-white font-medium">Bibek Bhattarai</p>
+                  <p className="text-gray-700 dark:text-gray-300">Name:</p>
+                  <p className="text-gray-800 dark:text-white font-medium">Bibek Bhattarai</p>
                 </div>
                 <div>
-                  <p className="text-gray-600 dark:text-gray-400">Phone:</p>
-                  <p className="text-gray-900 dark:text-white font-medium">+977 9860425440</p>
+                  <p className="text-gray-700 dark:text-gray-300">Phone:</p>
+                  <p className="text-gray-800 dark:text-white font-medium">+977 9860425440</p>
                 </div>
                 <div>
-                  <p className="text-gray-600 dark:text-gray-400">Email:</p>
-                  <p className="text-gray-900 dark:text-white font-medium">bbhattarai770@gmail.com</p>
+                  <p className="text-gray-700 dark:text-gray-300">Email:</p>
+                  <p className="text-gray-800 dark:text-white font-medium">bbhattarai770@gmail.com</p>
                 </div>
                 <div>
-                  <p className="text-gray-600 dark:text-gray-400">Nationality:</p>
-                  <p className="text-gray-900 dark:text-white font-medium">Nepali</p>
+                  <p className="text-gray-700 dark:text-gray-300">Nationality:</p>
+                  <p className="text-gray-800 dark:text-white font-medium">Nepali</p>
                 </div>
-                <div className="col-span-2">
-                  <p className="text-gray-600 dark:text-gray-400">Languages:</p>
-                  <p className="text-gray-900 dark:text-white font-medium">English, Nepali</p>
+                <div className="col-span-1 md:col-span-2">
+                  <p className="text-gray-700 dark:text-gray-300">Languages:</p>
+                  <p className="text-gray-800 dark:text-white font-medium">English, Nepali</p>
                 </div>
               </div>
             </div>

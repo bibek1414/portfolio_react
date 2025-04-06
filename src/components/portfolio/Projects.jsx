@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
-// Import your project images - you'll need to adjust the paths based on your file structure
-// For example: import hamroPasalImage from '../../assets/images/hamro-pasal1.png';
+
 
 const Projects = () => {
   const projects = [

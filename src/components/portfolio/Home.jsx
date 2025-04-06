@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaDownload, FaEnvelope, FaGithub, FaLinkedin, FaFacebook, FaCode, FaDatabase, FaMobileAlt, FaGlobe } from 'react-icons/fa';
 
@@ -118,50 +118,59 @@ const ProfileOrbit = () => {
   );
 };
 
-// Stats Section Component
-const StatsSection = () => {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center py-16" data-aos="fade-up">
-      <div>
-        <h2 className="text-4xl font-bold text-blue-600 dark:text-blue-400">10+</h2>
-        <p className="text-xl text-gray-600 dark:text-gray-300">Projects Completed</p>
-      </div>
-      <div>
-        <h2 className="text-4xl font-bold text-blue-600 dark:text-blue-400">10+</h2>
-        <p className="text-xl text-gray-600 dark:text-gray-300">Technologies Mastered</p>
-      </div>
-      <div>
-        <h2 className="text-4xl font-bold text-blue-600 dark:text-blue-400">25+</h2>
-        <p className="text-xl text-gray-600 dark:text-gray-300">Git Repositories</p>
-      </div>
-    </div>
-  );
-};
-
-// Home Page Component
+// Home Page Component with dynamic dark mode detection
 const HomePage = () => {
+  // State to track dark mode
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  
+  // Effect to check dark mode initially and add a MutationObserver to track changes
+  useEffect(() => {
+    // Initial check
+    const checkDarkMode = () => {
+      setIsDarkMode(document.documentElement.classList.contains('dark'));
+    };
+    
+    checkDarkMode();
+    
+    // Set up an observer to watch for class changes on the HTML element
+    const observer = new MutationObserver(mutations => {
+      mutations.forEach(mutation => {
+        if (mutation.attributeName === 'class') {
+          checkDarkMode();
+        }
+      });
+    });
+    
+    observer.observe(document.documentElement, { attributes: true });
+    
+    // Cleanup function to disconnect the observer when component unmounts
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+  
   return (
     <div>
       <div className="flex flex-col md:flex-row items-center justify-between py-20">
         {/* Left Section: Text Content */}
         <div className="md:w-1/2 space-y-6" data-aos="fade-right">
-          <h1 className="text-5xl font-bold text-gray-800 dark:text-white">
-            Hello, I'm <span className="text-blue-600 dark:text-blue-400">Bibek Bhattarai</span>
+          <h1 className={`text-5xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
+            Hello, I'm <span className={isDarkMode ? 'text-blue-400' : 'text-blue-600'}>Bibek Bhattarai</span>
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300">
+          <p className={`text-xl ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
             A passionate software developer building cool projects!
           </p>
           <div className="flex space-x-4">
             <a 
               href="/files/cv.pdf" 
               download
-              className="bg-blue-600 dark:bg-blue-700 text-white px-6 py-3 rounded-lg shadow-lg font-semibold hover:bg-blue-700 dark:hover:bg-blue-800 transition"
+              className={`${isDarkMode ? 'bg-blue-700 hover:bg-blue-800' : 'bg-blue-600 hover:bg-blue-700'} text-white px-6 py-3 rounded-lg shadow-lg font-semibold transition`}
             >
               <FaDownload className="inline mr-2" /> Download CV
             </a>
             <Link 
               to="/contact"
-              className="bg-transparent border-2 border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 py-2 px-6 rounded-full text-lg hover:bg-blue-600 hover:text-white dark:hover:bg-blue-500 transition"
+              className={`bg-transparent border-2 ${isDarkMode ? 'border-blue-400 text-blue-400 hover:bg-blue-500' : 'border-blue-600 text-blue-600 hover:bg-blue-600'} hover:text-white py-2 px-6 rounded-full text-lg transition`}
             >
               <FaEnvelope className="inline mr-2" /> Contact Me
             </Link>
@@ -171,7 +180,7 @@ const HomePage = () => {
               href="https://github.com/bibek1414" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
+              className={`${isDarkMode ? 'text-gray-300 hover:text-blue-400' : 'text-gray-700 hover:text-blue-600'} transition`}
             >
               <FaGithub className="text-3xl" />
             </a>
@@ -179,7 +188,7 @@ const HomePage = () => {
               href="https://www.linkedin.com/in/bibek-bhattarai-292b90342/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
+              className={`${isDarkMode ? 'text-gray-300 hover:text-blue-400' : 'text-gray-700 hover:text-blue-600'} transition`}
             >
               <FaLinkedin className="text-3xl" />
             </a>
@@ -187,7 +196,7 @@ const HomePage = () => {
               href="https://www.facebook.com/bibek.bhattarai.3133719" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
+              className={`${isDarkMode ? 'text-gray-300 hover:text-blue-400' : 'text-gray-700 hover:text-blue-600'} transition`}
             >
               <FaFacebook className="text-3xl" />
             </a>
@@ -201,7 +210,20 @@ const HomePage = () => {
       </div>
 
       {/* Stats Section */}
-      <StatsSection />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center py-16" data-aos="fade-up">
+        <div>
+          <h2 className={`text-4xl font-bold ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`}>10+</h2>
+          <p className={`text-xl ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>Projects Completed</p>
+        </div>
+        <div>
+          <h2 className={`text-4xl font-bold ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`}>10+</h2>
+          <p className={`text-xl ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>Technologies Mastered</p>
+        </div>
+        <div>
+          <h2 className={`text-4xl font-bold ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`}>25+</h2>
+          <p className={`text-xl ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>Git Repositories</p>
+        </div>
+      </div>
     </div>
   );
 };
