@@ -28,8 +28,10 @@ const Contact = () => {
     setStatus({ submitting: true, success: false, error: null });
     
     try {
-      // Replace with your actual backend URL
-      const response = await fetch('https://email-backend-ikbph3edm-bibek-bhattarais-projects.vercel.app/api/send-email', {
+      // Update to use the correct API endpoint URL
+      const apiUrl = 'https://email-backend-pink.vercel.app/api/send-mail';
+      
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -37,10 +39,16 @@ const Contact = () => {
         body: JSON.stringify(formData),
       });
       
-      const data = await response.json();
+      // Check if the response exists before trying to parse it
+      let data;
+      try {
+        data = await response.json();
+      } catch (err) {
+        throw new Error('Failed to parse response from server');
+      }
       
       if (!response.ok) {
-        throw new Error(data.error || 'Something went wrong');
+        throw new Error(data?.error || 'Something went wrong');
       }
       
       // Reset form on success
@@ -63,7 +71,7 @@ const Contact = () => {
       setStatus({
         submitting: false,
         success: false,
-        error: error.message
+        error: error.message || 'Failed to send message. Please try again later.'
       });
     }
   };
