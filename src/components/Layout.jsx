@@ -185,7 +185,7 @@ const Layout = ({ children }) => {
               <i className="fab fa-github text-xl"></i>
             </a>
             <a
-              href="https://linkedin.com/in/yourprofile"
+              href="https://www.linkedin.com/in/bibek-bhattarai-292b90342/"
               target="_blank"
               rel="noopener noreferrer"
               className={`transition-colors duration-300 ${darkMode ? 'text-gray-400 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'}`}
@@ -193,7 +193,7 @@ const Layout = ({ children }) => {
               <i className="fab fa-linkedin text-xl"></i>
             </a>
             <a
-              href="mailto:your.email@example.com"
+              href="bbhattarai770@gmail.com"
               className={`transition-colors duration-300 ${darkMode ? 'text-gray-400 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'}`}
             >
               <i className="fas fa-envelope text-xl"></i>

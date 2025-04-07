@@ -107,8 +107,8 @@ const ProfileOrbit = () => {
       <div className="orbit-path"></div>
       
       <div className="orbit-item"><FaCode /></div>
-      <div className="orbit-item"><FaDatabase /></div>
       <div className="orbit-item"><FaMobileAlt /></div>
+      <div className="orbit-item"><FaDatabase /></div>
       <div className="orbit-item"><FaGlobe /></div>
       
       <div className="profile-circle">

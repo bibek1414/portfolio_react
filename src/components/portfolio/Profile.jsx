@@ -66,34 +66,112 @@ const Profile = () => {
           </div>
         )}
 
-        {activeSection === 'skills' && (
-          <div>
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">My Skills</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6" data-aos="fade-up">
-              {[
-                { icon: 'fab fa-html5', color: 'text-orange-500', name: 'HTML' },
-                { icon: 'fab fa-css3-alt', color: 'text-blue-500', name: 'CSS' },
-                { icon: 'fab fa-css3', color: 'text-blue-400', name: 'Tailwind CSS' },
-                { icon: 'fab fa-js', color: 'text-yellow-500', name: 'JavaScript' },
-                { icon: 'fab fa-react', color: 'text-blue-400', name: 'React.js' },
-                { icon: 'fab fa-node', color: 'text-green-600', name: 'Next.js' },
-                { icon: 'fab fa-python', color: 'text-blue-500', name: 'Python' },
-                { icon: 'fab fa-python', color: 'text-green-600', name: 'Django' },
-                { icon: 'fab fa-node-js', color: 'text-green-500', name: 'Node.js' },
-                { icon: 'fas fa-database', color: 'text-green-400', name: 'MongoDB' },
-                { icon: 'fab fa-git-alt', color: 'text-red-500', name: 'Git' },
-                { icon: 'fab fa-github', color: 'text-gray-700 dark:text-gray-300', name: 'GitHub' }
-              ].map((skill, index) => (
-                <div key={index} className="group relative bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-lg flex items-center justify-center transition-colors duration-300">
-                  <i className={`${skill.icon} ${skill.color} text-4xl group-hover:opacity-20 transition-opacity`}></i>
-                  <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity text-gray-900 dark:text-white">
-                    {skill.name}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+{activeSection === 'skills' && (
+  <div>
+    <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">My Skills</h2>
+    
+    {/* Frontend Development */}
+    <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mt-8 mb-4">Frontend Development</h3>
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mb-8" data-aos="fade-up">
+      {[
+        { icon: 'fab fa-html5', color: 'text-orange-500', name: 'HTML' },
+        { icon: 'fab fa-css3-alt', color: 'text-blue-500', name: 'CSS' },
+        { icon: 'fab fa-js', color: 'text-yellow-500', name: 'JavaScript' },
+        { icon: 'fab fa-react', color: 'text-blue-400', name: 'React.js' },
+        { icon: 'fab fa-node', color: 'text-green-600', name: 'Next.js' },
+        { icon: 'fab fa-css3', color: 'text-blue-400', name: 'Tailwind CSS' },
+        { icon: 'fas fa-code', color: 'text-purple-500', name: 'GSAP' },
+        { icon: 'fas fa-wave-square', color: 'text-blue-300', name: 'AOS' }
+      ].map((skill, index) => (
+        <div key={index} className="group relative bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-lg flex items-center justify-center transition-colors duration-300">
+          <i className={`${skill.icon} ${skill.color} text-4xl group-hover:opacity-20 transition-opacity`}></i>
+          <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity text-gray-900 dark:text-white font-medium">
+            {skill.name}
+          </span>
+        </div>
+      ))}
+    </div>
+
+    {/* Backend Development */}
+    <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mt-8 mb-4">Backend Development</h3>
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mb-8" data-aos="fade-up">
+      {[
+        { icon: 'fab fa-node-js', color: 'text-green-500', name: 'Node.js' },
+        { icon: 'fab fa-python', color: 'text-blue-500', name: 'Python' },
+        { icon: 'fab fa-python', color: 'text-green-600', name: 'Django' },
+        { icon: 'fas fa-bolt', color: 'text-teal-400', name: 'FastAPI' },
+        { icon: 'fas fa-chart-line', color: 'text-blue-400', name: 'NumPy' },
+        { icon: 'fas fa-table', color: 'text-blue-600', name: 'Pandas' },
+        { icon: 'fas fa-brain', color: 'text-orange-500', name: 'Scikit-learn' },
+        { icon: 'fas fa-robot', color: 'text-yellow-500', name: 'TensorFlow' }
+      ].map((skill, index) => (
+        <div key={index} className="group relative bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-lg flex items-center justify-center transition-colors duration-300">
+          <i className={`${skill.icon} ${skill.color} text-4xl group-hover:opacity-20 transition-opacity`}></i>
+          <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity text-gray-900 dark:text-white font-medium">
+            {skill.name}
+          </span>
+        </div>
+      ))}
+    </div>
+
+    {/* Database Management */}
+    <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mt-8 mb-4">Database Management</h3>
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mb-8" data-aos="fade-up">
+      {[
+        { icon: 'fas fa-database', color: 'text-green-400', name: 'MongoDB' },
+        { icon: 'fas fa-database', color: 'text-blue-600', name: 'PostgreSQL' },
+        { icon: 'fas fa-database', color: 'text-blue-400', name: 'MySQL' },
+        { icon: 'fas fa-server', color: 'text-purple-500', name: 'SQL' }
+      ].map((skill, index) => (
+        <div key={index} className="group relative bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-lg flex items-center justify-center transition-colors duration-300">
+          <i className={`${skill.icon} ${skill.color} text-4xl group-hover:opacity-20 transition-opacity`}></i>
+          <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity text-gray-900 dark:text-white font-medium">
+            {skill.name}
+          </span>
+        </div>
+      ))}
+    </div>
+
+    {/* Cloud & DevOps */}
+    <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mt-8 mb-4">Cloud & DevOps</h3>
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mb-8" data-aos="fade-up">
+      {[
+        { icon: 'fab fa-aws', color: 'text-orange-500', name: 'AWS (EC2, S3)' },
+        { icon: 'fas fa-cloud', color: 'text-gray-400', name: 'Render' },
+        { icon: 'fas fa-cloud', color: 'text-black dark:text-white', name: 'Vercel' },
+        { icon: 'fab fa-docker', color: 'text-blue-500', name: 'Docker' },
+        { icon: 'fas fa-ship', color: 'text-blue-400', name: 'Kubernetes' },
+        { icon: 'fab fa-linux', color: 'text-yellow-500', name: 'Linux' },
+        { icon: 'fas fa-terminal', color: 'text-green-500', name: 'Shell Scripting' }
+      ].map((skill, index) => (
+        <div key={index} className="group relative bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-lg flex items-center justify-center transition-colors duration-300">
+          <i className={`${skill.icon} ${skill.color} text-4xl group-hover:opacity-20 transition-opacity`}></i>
+          <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity text-gray-900 dark:text-white font-medium">
+            {skill.name}
+          </span>
+        </div>
+      ))}
+    </div>
+
+    {/* Tools & Practices */}
+    <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mt-8 mb-4">Tools & Practices</h3>
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6" data-aos="fade-up">
+      {[
+        { icon: 'fab fa-git-alt', color: 'text-red-500', name: 'Git' },
+        { icon: 'fab fa-github', color: 'text-gray-700 dark:text-gray-300', name: 'GitHub' },
+        { icon: 'fab fa-gitlab', color: 'text-orange-500', name: 'GitLab' },
+        { icon: 'fas fa-code-branch', color: 'text-purple-500', name: 'CI/CD' }
+      ].map((skill, index) => (
+        <div key={index} className="group relative bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-lg flex items-center justify-center transition-colors duration-300">
+          <i className={`${skill.icon} ${skill.color} text-4xl group-hover:opacity-20 transition-opacity`}></i>
+          <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity text-gray-900 dark:text-white font-medium">
+            {skill.name}
+          </span>
+        </div>
+      ))}
+    </div>
+  </div>
+)}
 
         {activeSection === 'about' && (
           <div className="space-y-6" data-aos="fade-up">
