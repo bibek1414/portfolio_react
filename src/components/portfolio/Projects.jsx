@@ -11,15 +11,7 @@ const Projects = () => {
       technologies: "HTML, CSS, Tailwind, JavaScript, Nextjs, MongoDB, AWS, Google Console, Stripe",
       liveLink: "https://ecommerce-front-nine-mu.vercel.app/",
       githubLink: "https://github.com/bibek1414/ecommerce-frontend-backend",
-      image: "/images/hamro-pasal1.png" // Update with actual path
-    },
-    {
-      title: "Todo Project",
-      description: "A task management application built with Django. It includes functionalities like adding, editing, and deleting tasks.",
-      technologies: "Django, HTML, CSS, JavaScript",
-      liveLink: "https://todo-90zm.onrender.com",
-      githubLink: "https://github.com/bibek1414/todo-django",
-      image: "/images/todo1.png" // Update with actual path
+      image: "/images/hamro-pasal2.png" 
     },
     {
       title: "Tweeter Bar",
@@ -27,7 +19,7 @@ const Projects = () => {
       technologies: "Django, Tailwind CSS, JavaScript",
       liveLink: "https://tweet-django-xxrw.onrender.com",
       githubLink: "https://github.com/bibek1414/tweet-django",
-      image: "/images/tweeter-bar.png" // Update with actual path
+      image: "/images/tweeter-bar.png" 
     },
     {
       title: "Quiz Application",
@@ -35,7 +27,7 @@ const Projects = () => {
       technologies: "Django, Tailwind CSS, JavaScript",
       liveLink: "https://quiz-django.onrender.com/",
       githubLink: "https://github.com/bibek1414/quiz_django",
-      image: "/images/image.png" // Update with actual path
+      image: "/images/image.png" 
     },
     {
       title: "Task Manager",
@@ -43,7 +35,7 @@ const Projects = () => {
       technologies: "React, FastAPI, MongoDB, Tailwind CSS",
       liveLink: "https://taskmanagerfront-sandy.vercel.app/",
       githubLink: "https://github.com/bibek1414/taskmanagerfront",
-      image: "/images/task-manager.png" // Update with actual path
+      image: "/images/task-manager.png" 
     },
     {
       title: "Expense Tracker",
@@ -51,7 +43,7 @@ const Projects = () => {
       technologies: "Django, PostgreSQL, Google Auth",
       liveLink: "https://expense-tracker-example.herokuapp.com/",
       githubLink: "https://github.com/bibek1414/expense_tracker",
-      image: "/images/expense-tracker.png" // Update with actual path
+      image: "/images/expense-tracker.png" 
     },
     {
       title: "Weather App",
@@ -59,7 +51,7 @@ const Projects = () => {
       technologies: "Django, OpenWeatherMap API, Tailwind CSS, JavaScript, Gsap",
       liveLink: "https://weatherapp-example.vercel.app/",
       githubLink: "https://github.com/bibek1414/weatherapp",
-      image: "/images/weather-app.png" // Update with actual path
+      image: "/images/weather-app.png" 
     },
     {
       title: "ChatApp",
@@ -67,8 +59,26 @@ const Projects = () => {
       technologies: "Django, Channels, WebRTC, Redis, Tailwind CSS, JavaScript",
       liveLink: "https://chatapp-cuvv.onrender.com/",
       githubLink: "https://github.com/bibek1414/chatapp",
-      image: "/images/chat-app.png" // Update with actual path
+      image: "/images/chat-app.png" 
+    },
+    {
+      title: "BookMyProblem",
+      description: "A platform built with Next.js for both frontend and backend, enabling users to book a wide range of problem-solving services—including tech support, legal help, repairs, and more—to be resolved within 24 hours. The platform supports real-time updates and notifications for both users and service providers.",
+      technologies: "Next.js, React, Tailwind CSS, JavaScript, Node.js",
+      liveLink: "", 
+      githubLink: "https://github.com/bibek1414/bookmyproblems",
+      image: "/images/bookmyproblem.png"
+    },
+    {
+      title: "FaceAuth System",
+      description: "A facial recognition-based authentication system built using Python and Django. It uses OpenCV for face detection and recognition, providing a secure and user-friendly login system. The project also includes utilities for cryptographic operations and face data handling.",
+      technologies: "Django, OpenCV, Python, Tailwind CSS, SQLite, Docker",
+      liveLink: "", 
+      githubLink: "https://github.com/bibek1414/face-auth-system",
+      image: "/images/faceauth.png"
     }
+    
+    
   ];
 
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
