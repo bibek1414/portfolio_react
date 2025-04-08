@@ -54,17 +54,30 @@ const Layout = ({ children }) => {
       <header className={`fixed w-full z-10 transition-colors duration-300 ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} border-b shadow-md`}>
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex justify-between items-center py-4">
-            {/* Logo and Name */}
-            <div className="flex items-center space-x-3">
-              {/* Circular Logo - replace with your actual logo */}
-              <div className={`w-10 h-10 rounded-full bg-gradient-to-r ${darkMode ? 'from-blue-500 to-purple-600' : 'from-blue-600 to-indigo-700'} flex items-center justify-center`}>
-                <span className="text-white font-bold text-lg">B</span>
-              </div>
-              {/* Name */}
-              <Link to="/" className={`text-2xl font-bold ${darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'} transition-colors duration-300`}>
-                Bibek .
-              </Link>
-            </div>
+         
+          <div className="flex items-center space-x-3">
+          <div
+            className={`w-10 h-10 rounded-full overflow-hidden bg-gradient-to-r ${
+              darkMode ? 'from-blue-500 to-purple-600' : 'from-blue-600 to-indigo-700'
+            } flex items-center justify-center`}
+          >
+            <img
+              src="images/logo.png"
+              alt="Logo"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <Link
+            to="/"
+            className={`text-2xl font-bold ${
+              darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'
+            } transition-colors duration-300`}
+          >
+            Bibek .
+          </Link>
+        </div>
+
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-6 items-center">
