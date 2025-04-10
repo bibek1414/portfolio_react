@@ -14,12 +14,12 @@ const Projects = () => {
       image: "/images/hamro-pasal2.png" 
     },
     {
-      title: "Tweeter Bar",
-      description: "A social media app where users can register, log in, log out, post tweets, and edit their posts. Built with Django and offers a full set of user management features.",
-      technologies: "Django, Tailwind CSS, JavaScript",
-      liveLink: "https://tweet-django-xxrw.onrender.com",
-      githubLink: "https://github.com/bibek1414/tweet-django",
-      image: "/images/tweeter-bar.png" 
+      title: "YouTube Comment Analyzer",
+      description: "A comprehensive analytics platform that uses machine learning to analyze sentiment and trends in YouTube comments. The project features a Chrome extension for easy access and visualization, backed by a Python-based ML pipeline that processes and analyzes comment data from various social platforms including YouTube, Reddit, and Twitter.",
+      technologies: "Python, Machine Learning, MLflow, Flask, JavaScript, Chart.js, Docker, Chrome Extension API",
+      liveLink: "",
+      githubLink: "https://github.com/bibek1414/youtube-comment-analyzer",
+      image: "/images/youtube-analysis.png"
     },
     {
       title: "Quiz Application",
@@ -30,14 +30,6 @@ const Projects = () => {
       image: "/images/image.png" 
     },
     {
-      title: "Task Manager",
-      description: "A task management application built with React, FastAPI, MongoDB, and Tailwind CSS. It allows users to organize their tasks efficiently.",
-      technologies: "React, FastAPI, MongoDB, Tailwind CSS",
-      liveLink: "https://taskmanagerfront-sandy.vercel.app/",
-      githubLink: "https://github.com/bibek1414/taskmanagerfront",
-      image: "/images/task-manager.png" 
-    },
-    {
       title: "Expense Tracker",
       description: "A financial dashboard built with Django and PostgreSQL. It allows users to track their income, expenses, and net balance over different time periods.",
       technologies: "Django, PostgreSQL, Google Auth",
@@ -46,20 +38,12 @@ const Projects = () => {
       image: "/images/expense-tracker.png" 
     },
     {
-      title: "Weather App",
-      description: "A weather forecasting app that provides real-time weather data, built using React and the OpenWeatherMap API.",
-      technologies: "Django, OpenWeatherMap API, Tailwind CSS, JavaScript, Gsap",
-      liveLink: "https://weatherapp-example.vercel.app/",
-      githubLink: "https://github.com/bibek1414/weatherapp",
-      image: "/images/weather-app.png" 
-    },
-    {
-      title: "ChatApp",
-      description: "A real-time chat application with support for text messaging, audio calls, and video calls, built using Django Channels and WebRTC.",
-      technologies: "Django, Channels, WebRTC, Redis, Tailwind CSS, JavaScript",
-      liveLink: "https://chatapp-cuvv.onrender.com/",
-      githubLink: "https://github.com/bibek1414/chatapp",
-      image: "/images/chat-app.png" 
+      title: "Tweeter Bar",
+      description: "A social media app where users can register, log in, log out, post tweets, and edit their posts. Built with Django and offers a full set of user management features.",
+      technologies: "Django, Tailwind CSS, JavaScript",
+      liveLink: "https://tweet-django-xxrw.onrender.com",
+      githubLink: "https://github.com/bibek1414/tweet-django",
+      image: "/images/tweeter-bar.png" 
     },
     {
       title: "BookMyProblem",
@@ -70,14 +54,41 @@ const Projects = () => {
       image: "/images/bookmyproblem.png"
     },
     {
+      title: "ChatApp",
+      description: "A real-time chat application with support for text messaging, audio calls, and video calls, built using Django Channels and WebRTC.",
+      technologies: "Django, Channels, WebRTC, Redis, Tailwind CSS, JavaScript",
+      liveLink: "https://chatapp-cuvv.onrender.com/",
+      githubLink: "https://github.com/bibek1414/chatapp",
+      image: "/images/chat-app.png" 
+    },
+  
+   
+    {
+      title: "Weather App",
+      description: "A weather forecasting app that provides real-time weather data, built using React and the OpenWeatherMap API.",
+      technologies: "Django, OpenWeatherMap API, Tailwind CSS, JavaScript, Gsap",
+      liveLink: "https://weatherapp-example.vercel.app/",
+      githubLink: "https://github.com/bibek1414/weatherapp",
+      image: "/images/weather-app.png" 
+    },
+    
+    
+    {
       title: "FaceAuth System",
       description: "A facial recognition-based authentication system built using Python and Django. It uses OpenCV for face detection and recognition, providing a secure and user-friendly login system. The project also includes utilities for cryptographic operations and face data handling.",
       technologies: "Django, OpenCV, Python, Tailwind CSS, SQLite, Docker",
       liveLink: "", 
       githubLink: "https://github.com/bibek1414/face-auth-system",
       image: "/images/faceauth.png"
-    }
-    
+    }  ,
+    {
+      title: "Task Manager",
+      description: "A task management application built with React, FastAPI, MongoDB, and Tailwind CSS. It allows users to organize their tasks efficiently.",
+      technologies: "React, FastAPI, MongoDB, Tailwind CSS",
+      liveLink: "https://taskmanagerfront-sandy.vercel.app/",
+      githubLink: "https://github.com/bibek1414/taskmanagerfront",
+      image: "/images/task-manager.png" 
+    },
     
   ];
 
