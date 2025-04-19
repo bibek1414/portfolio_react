@@ -22,6 +22,22 @@ const Projects = () => {
       image: "/images/youtube-analysis.png"
     },
     {
+      title: "BookMyProblem",
+      description: "A platform built with Next.js for both frontend and backend, enabling users to book a wide range of problem-solving services—including tech support, legal help, repairs, and more—to be resolved within 24 hours. The platform supports real-time updates and notifications for both users and service providers.",
+      technologies: "Next.js, React, Tailwind CSS, JavaScript, Node.js",
+      liveLink: "", 
+      githubLink: "https://github.com/bibek1414/bookmyproblems",
+      image: "/images/bookmyproblem.png"
+    },
+    {
+      title: "ChatApp",
+      description: "A real-time chat application with support for text messaging, audio calls, and video calls, built using Django Channels and WebRTC.",
+      technologies: "Django, Channels, WebRTC, Redis, Tailwind CSS, JavaScript",
+      liveLink: "https://chatapp-cuvv.onrender.com/",
+      githubLink: "https://github.com/bibek1414/chatapp",
+      image: "/images/chat-app.png" 
+    },
+    {
       title: "Quiz Application",
       description: "A quiz application built with Django, Tailwind CSS, and JavaScript. It allows users to take quizzes and view their results.",
       technologies: "Django, Tailwind CSS, JavaScript",
@@ -45,22 +61,7 @@ const Projects = () => {
       githubLink: "https://github.com/bibek1414/tweet-django",
       image: "/images/tweeter-bar.png" 
     },
-    {
-      title: "BookMyProblem",
-      description: "A platform built with Next.js for both frontend and backend, enabling users to book a wide range of problem-solving services—including tech support, legal help, repairs, and more—to be resolved within 24 hours. The platform supports real-time updates and notifications for both users and service providers.",
-      technologies: "Next.js, React, Tailwind CSS, JavaScript, Node.js",
-      liveLink: "", 
-      githubLink: "https://github.com/bibek1414/bookmyproblems",
-      image: "/images/bookmyproblem.png"
-    },
-    {
-      title: "ChatApp",
-      description: "A real-time chat application with support for text messaging, audio calls, and video calls, built using Django Channels and WebRTC.",
-      technologies: "Django, Channels, WebRTC, Redis, Tailwind CSS, JavaScript",
-      liveLink: "https://chatapp-cuvv.onrender.com/",
-      githubLink: "https://github.com/bibek1414/chatapp",
-      image: "/images/chat-app.png" 
-    },
+    
   
    
     {
@@ -81,6 +82,14 @@ const Projects = () => {
       githubLink: "https://github.com/bibek1414/face-auth-system",
       image: "/images/faceauth.png"
     }  ,
+    {
+      title: "J.A.R.V.I.S. Voice Assistant",
+      description: "A web-based voice assistant application that uses the Web Speech API to process voice commands, schedule tasks, play music, search files, and provide information through a sleek dark-themed UI.",
+      technologies: "HTML, CSS, JavaScript, Web Speech API (SpeechRecognition & SpeechSynthesis), OpenWeatherMap API",
+      liveLink: "https://bibek1414.github.io/voice-assitance/",
+      githubLink: "https://github.com/bibek1414/voice-assitance",
+      image: "/images/jarvis-voice-assistant.png"
+    },
     {
       title: "Task Manager",
       description: "A task management application built with React, FastAPI, MongoDB, and Tailwind CSS. It allows users to organize their tasks efficiently.",
